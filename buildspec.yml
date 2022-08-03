@@ -4,12 +4,10 @@ phases:
   pre_build:
     commands:
       - echo "$SERVER_IP $CAPROVER_HOST" >> /etc/hosts
-      - echo "$SERVER_IP_2 $CAPROVER_HOST_2" >> /etc/hosts
       - npm i -g caprover
   build:
     commands:
       - TAG_NUMBER="$(git describe --tags --abbrev=0)"
       - echo "Build on branch $TAG_NUMBER"
       - caprover deploy -h "http://$CAPROVER_HOST" -p $CAPROVER_PASSWORD -b $TAG_NUMBER -a $APP_NAME
-      - caprover deploy -h "http://$CAPROVER_HOST_2" -p $CAPROVER_PASSWORD -b $TAG_NUMBER -a $APP_NAME
       # - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
