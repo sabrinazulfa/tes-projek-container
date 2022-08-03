@@ -1,4 +1,3 @@
-FROM php:7.4-cli
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-CMD [ "php", "./your-script.php" ]
+FROM php:8.0.0-apache
+COPY /index.php /var/www/html
+EXPOSE 80
