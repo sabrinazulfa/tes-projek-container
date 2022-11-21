@@ -1,4 +1,3 @@
 #tes-projek-container
 bismillahirrahmanirrahiim
 alhamdulillahirobbil alamiin
-allahumma sholli ala sayyidina muhammad
